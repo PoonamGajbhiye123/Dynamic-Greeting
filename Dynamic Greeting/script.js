@@ -1,9 +1,31 @@
+
 button1 = document.querySelector("button")
-input1 = document.querySelector("input")
 output = document.querySelector(".output")
 
-button1.addEventListener("click", showMessage)
-function showMessage(){
-    let message = `You can donate ${input1.value*(10/100)}`
-    output.innerHTML = "<h3><I>Hello</I></h3>"+ message
+button1.addEventListener("click", displayMessage)
+
+function displayMessage()
+{
+    let message 
+    let date = new Date()
+    let hours = date.getHours()
+    if(hours < 12)
+    {
+        message = "Good Morning!"
+    }
+    else if(hours >= 12 && hours <= 17)
+    {
+        message = "Good Afternoon!"
+    }
+    else if(hours >=17 && hours <= 22)
+    {
+        message = "Good Evening!" 
+    }
+    else 
+    {
+        message = "Good Night!" 
+    }
+    output.innerText = message
+
+
 }
